@@ -15,7 +15,25 @@
 *.out
 
 # Dependency directories (remove the comment below to include it)
-# vendor/
+vendor/
 
 # Go workspace file
 go.work
+
+.idea/
+.vscode/
+.DS_Store
+*.prof
+*.pid
+*.pid.lock
+*_port
+.coverage.out
+
+# for project
+local/
+kubeconfig
+easyai-platform
+easyai-platform-linux-amd64
+easyai-platform-macos-amd64
+easyai-platform-macos-arm64
+*client.tar.gz
