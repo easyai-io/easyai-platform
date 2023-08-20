@@ -31,7 +31,7 @@ linters-settings:
     sections:
       - standard
       - default
-      - prefix(platgit.mihoyo.com/easyai/easyai-core)
+      - prefix(github.com/easyai-io/easyai-platform)
 issues:
   # The default exclusion rules are a bit too permissive, so copying the relevant ones below
   exclude-use-default: false
