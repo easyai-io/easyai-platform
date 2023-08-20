@@ -2,6 +2,9 @@ package contextx
 
 import (
 	"context"
+
+	"github.com/spf13/cobra"
+	"github.com/spf13/viper"
 )
 
 type (
@@ -126,4 +129,18 @@ func FromTraceID(ctx context.Context) (string, bool) {
 		}
 	}
 	return "", false
+}
+
+// SetCmdUser  ...
+func SetCmdUser(cmd *cobra.Command, user string) {
+	cmd.SetContext(NewUserUID(cmd.Context(), user))
+}
+
+// GetCmdUser  ...
+func GetCmdUser(cmd *cobra.Command) string {
+	if v := FromUserUID(cmd.Context()); v != "" {
+		return v
+	}
+	// fallback to viper global config
+	return viper.GetString("user-uid")
 }

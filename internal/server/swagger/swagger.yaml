@@ -1,0 +1,20 @@
+basePath: /
+info:
+  contact:
+    email: admin@easyai.io
+    name: shuaiyy
+    url: https://easyai.io
+  description: a ml/dl platform build with golang + gin, based on k8s and cloud-native
+    projects.
+  title: easyai-platform
+  version: 0.0.1
+paths: {}
+schemes:
+- http
+- https
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: X-Authorization-Token
+    type: apiKey
+swagger: "2.0"

@@ -31,9 +31,11 @@ go.work
 
 # for project
 local/
+configs/
 kubeconfig
 easyai-platform
 easyai-platform-linux-amd64
 easyai-platform-macos-amd64
 easyai-platform-macos-arm64
+client$
 *client.tar.gz

@@ -23,7 +23,7 @@ web:
 
 ent:
 	@echo [Generate] ent
-	@cd ./internal/server/dao/ent/ && go run -mod=mod entgo.io/ent/cmd/ent generate --feature intercept,schema/snapshot ./schema
+	@#cd ./internal/server/dao/ent/ && go run -mod=mod entgo.io/ent/cmd/ent generate --feature intercept,schema/snapshot ./schema
 
 wire:
 	@echo [Generate] wire
@@ -38,9 +38,7 @@ app: lint ent wire swagger
 
 run: app
 	@echo [Run] version=$(VERSION) commit=$(COMMIT) date=$(TIME)
-	@ ./easyai-platform web --conf ./configs/app.local.toml
-
-
+	@ ./easyai-platform web --conf ./configs/local.toml
 
 swagger:
 	@swag init --parseDependency=false --parseInternal --parseDepth=10  --parseGoList=false --exclude=./internal/server/dao \

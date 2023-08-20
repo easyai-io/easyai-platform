@@ -1,0 +1,26 @@
+{
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "a ml/dl platform build with golang + gin, based on k8s and cloud-native projects.",
+        "title": "easyai-platform",
+        "contact": {
+            "name": "shuaiyy",
+            "url": "https://easyai.io",
+            "email": "admin@easyai.io"
+        },
+        "version": "0.0.1"
+    },
+    "basePath": "/",
+    "paths": {},
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "name": "X-Authorization-Token",
+            "in": "header"
+        }
+    }
+}
