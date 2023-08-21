@@ -1,0 +1,42 @@
+- 快速开始
+  - [Quick Start](quick-start/quick_start.md)
+  - [🌰e2e_pytorch_mnist](quick-start/e2e_pytorch_mnist.md)
+  - [算力管理](quick-start/resource.md)
+  - [数据管理](quick-start/data_manage.md)
+  - [常见问题](faq.md)
+  - [Client下载和使用](quick-start/client_download.md)
+  - [API文档](https://easyai.io/swagger/index.html)
+- 平台介绍
+  - [关于](README.md)
+  - [平台架构](about/architecture.md)
+  - [迭代规划](about/roadmap.md)
+- 模型训练
+  - [开发环境](training/develop-env.md)
+  - [离线job](training/easyai-job.md)
+    - [tensorflow](training/easyai-job-tf.md)
+    - [pytorch](training/easyai-job-pytorch.md)
+    - ...
+- 模型仓库
+- 推理服务
+- 项目开发
+  - [本地开发环境](dev-ops/local-development-env.md)
+  - [job状态机](dev-ops/status-machine-for-easyai-job.md)
+- 部署运维
+  - [部署easyai](dev-ops/deploy-easyai-platform.md)
+  - [容器基础监控](dev-ops/container_basic_monitor.md)
+  - [集群标准化接入](dev-ops/add_cluster.md)
+  - [节点标准化接入](dev-ops/add_node.md)
+  - [故障定位](dev-ops/exception_case_location.md)
+- 设计文档
+  - [平台总体设计](design/easyai_platform.md)
+  - [资源池设计](design/resource_pool.md)
+  - [容器entrypoint wrapper](design/container_entrypoint_wrapper.md)
+  - [集群内网代理](design/L3-proxy-for-k8s-cluster.md)
+  - [cli镜像构建](design/image_build_with_cli.md)
+  - [cli提交job](design/job_submit_with_cli.md)
+  - [用户权限](design/user_permission.md)
+  - [数据存储](design/data_storage.md)
+  - [训练job](design/training_job.md)
+  - [开发环境](design/develop_env.md)
+  - [模型仓库](design/model_repository.md)
+  - [监控日志告警](design/ops.md)

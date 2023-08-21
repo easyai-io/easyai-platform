@@ -27,23 +27,85 @@ easyai-platform
 5. volcano(scheduler+controller)，k8s批处理调度器，支持gang-scheduler等调度策略
 6. nginx-ingress-controller, 提供服务访问路由
 
-# 设计方案
+# 文档
 
-请参考[总体设计文档](./docs/design/README.md)
+**开发相关**
+- [整体架构](./docs/design/easyai_platform.md)
+- [设计文档](./docs/design)
+- [产品文档](./docs/about/todo.md)
+- [部署和运维](./docs/about/todo.md)
+
+**使用相关**
+- [快速开始](./docs/quick-start/quick_start.md)
+- [开发环境使用](./docs/about/todo.md)
+- [提交训练作业](./docs/about/todo.md)
+- [client命令行工具](./docs/about/todo.md)
 
 # 开发
 
 ## 项目结构
 
 ```
-todo 待补充
+.
+├── CHANGELOG.md
+├── Dockerfile
+├── Makefile 
+├── cmd
+│   ├── client # client命令行入口
+│   └── server # 服务端启动入口
+├── docs 用户文档和设计文档
+├── internal
+│   ├── client # client业务代码
+│   └── server # 服务端业务代码
+├── pkg
+│   ├── apischema # openapi schema定义
+└── www # 前端静态资源
 ```
 
 ## Build && Run && Deploy
 
 ```shell
-todo 待补充
+# build
+
+make lint
+make app
+
+# run
+make run
+
+# 打包镜像
+make image
+make image-push
+
+# 在k8s中升级
+make upgrade
 ```
+
+## 项目规划
+
+- Web前端
+  - [] 登录界面
+  - [] 作业管理
+  - [] 在线开发
+  - ...
+- 服务端
+  - [] 作业管理
+    - [] 作业定义
+    - [] crud接口
+    - [] 作业编排(单机+tf分布式)
+    - [] 作业状态机(单机+tf分布式)
+    - [] 作业调度
+    - [] 作业存储支持
+  - [] 资源管理
+  - [] 用户管理
+  - [] 集群管理
+  - [] go-sdk
+  - [] ...
+- client命令行工具
+  - [] 身份认证
+  - [] 提交作业
+  - [] 构建镜像
+  - [] ...
 
 ## contribute
 

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document of Easyai Platform</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content="document">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="vendor/themes/vue.css">
+    <link rel="stylesheet" href="vendor/themes/prism-one-light.css">
+<!--    <link rel="stylesheet" href="vendor/plugin/css/toc.css">-->
+    <link rel="stylesheet" href="vendor/plugin/css/sidebar.min.css" />
+    <link rel="stylesheet" href="vendor/plugin/css/docsify-gifcontrol.css">
+    <link rel="icon" href="static/favicon.ico">
+</head>
+<body>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        name: "<p>Easyai</p>",
+        basePath: "/docs/",
+        relativePath: false,
+        nameLink: '',
+        themeColor: '#007be8', // 主题颜色
+        loadSidebar: true,//_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载
+        alias: {
+            '/.*/_sidebar.md': '/_sidebar.md',
+            '/.*/_navbar.md': '/_navbar.md'
+        }, // 永远加载根目录的sidebar.md文件
+        auto2top: true,  //当路线改变时,滚动到屏幕的顶部
+        loadNavbar: true,//_navbar.md如果为真，则从_navbar.md文件加载navbar ，否则从指定的路径加载
+        mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并
+        executeScript: true,//执行页面上的脚本。只解析第一个脚本标记（演示）。如果存在Vue，则默认开
+        maxLevel: 6,//最大的内容表级别
+        autoHeader: true,
+        subMaxLevel: 3,
+        //subMaxLevel: 6,//在自定义边栏中添加目录（TOC)
+        externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
+        coverpage: true,
+        onlyCover: true,
+        topMargin: 60,//调整top
+        //executeScript: true,//执行页面上的脚本，仅解析第一个脚本标签
+        search: {
+            paths: 'auto',
+            placeholder: '🔍 搜索',
+            noData: '😒 找不到结果',
+            // Headline depth, 1 - 6
+            depth: 6,
+            maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        },//添加搜索框
+        markdown: {
+            renderer: {
+
+                code: function (code, lang) {
+                    if (lang === 'drawio') {
+                        if (window.drawioConverter) {
+                            console.log('drawio 转化中')
+                            return window.drawioConverter(code)
+                        } else {
+                            return `<div class='drawio-code'>${code}</div>`
+                        }
+                    } else {
+                        return this.origin.code.apply(this, arguments);
+                    }
+                }
+            }
+        }, // markdown draw io
+        toc: {
+            scope: '.markdown-section',
+            headings: 'h1, h2, h3, h4, h5, h6',
+            title: 'Table of Contents',
+        }, // 添加目录
+        tabs: {
+            persist    : true,      // default
+            sync       : true,      // default
+            theme      : 'classic', // default
+            tabComments: true,      // default
+            tabHeadings: true       // default
+        }, // 添加标签页
+        plantuml: {
+            skin: 'default',
+        }, // plantuml support
+        footer: {
+            copy: '机器学习平台 —— <a href="https://easyai.io/" target="_blank">Easyai</a><br/><br/>',
+            pre: '<hr/>',
+            style: 'text-align: left;',
+        }//添加页脚
+    }
+</script>
+<script src="vendor/docsify.js"></script>
+<script src="vendor/search.min.js"></script>
+<script src="vendor/prism-bash.min.js"></script>
+<script src="vendor/prism-json.min.js"></script>
+<script src="vendor/prism-python.min.js"></script>
+<script src="vendor/plugin/zoom-image.min.js"></script>
+<script src="vendor/plugin/docsify-copy-code.min.js"></script>
+<!--<script src="vendor/plugin/toc.js"></script>-->
+<script src="vendor/plugin/docsify-sidebar-collapse.min.js"></script>
+<script src="vendor/plugin/docsify-drawio-viewer.min.js"></script>
+<script src='vendor/plugin/drawio.js'></script>
+<script src="vendor/plugin/docsify-gifcontrol.js"></script>
+<script src="vendor/plugin/docsify-puml.min.js"></script>
+<script src="vendor/plugin/docsify-tabs.js"></script>
+</body>
+</html>

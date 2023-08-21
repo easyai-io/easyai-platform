@@ -37,5 +37,5 @@ easyai-platform
 easyai-platform-linux-amd64
 easyai-platform-macos-amd64
 easyai-platform-macos-arm64
-client$
+./client
 *client.tar.gz

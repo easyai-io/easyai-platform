@@ -127,6 +127,9 @@ func initConfig() {
 }
 
 func parseUserID(token string) (string, error) {
+	/* TODO 需要重构；在客户端解析token时，client需要知道签名的key，此处key是写死在代码里的。
+	改成从服务端校验token，并缓存userid和过期时间
+	*/
 	signingKey := "easyai"
 	var opts []auth.Option
 	opts = append(opts, auth.SetExpired(3600*24*365*2))
